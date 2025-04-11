@@ -1,0 +1,6 @@
+bank,rate_type,rate,term,ltv,fee
+Halifax,Fixed,4.1,2 Year,75%,999
+Barclays,Fixed,4.35,5 Year,60%,0
+HSBC,Tracker,4.25,2 Year,90%,499
+Nationwide,Fixed,4.5,5 Year,75%,999
+NatWest,Variable,5.1,Lifetime,75%,0
