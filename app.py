@@ -1,6 +1,6 @@
-# Rewriting the updated app.py again after code execution environment reset
+# Recreate the final cleaned-up version of app.py with all enhancements and no file writing logic
 
-app_py_updated = """
+clean_app_py = """
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -64,6 +64,3 @@ else:
     selected = sorted_df.iloc[0]
     monthly_payment = calculate_monthly_payment(selected['rate'], amortization_years, loan_amount)
     st.success(f"💸 Estimated Monthly Payment: £{monthly_payment:.2f}")
-"""
-
-"/mnt/data/app.py updated and ready for redeployment."
