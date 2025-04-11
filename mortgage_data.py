@@ -1,11 +1,6 @@
 import pandas as pd
 
-def get_mock_mortgage_rates():
-    data = [
-        {"bank": "Halifax", "rate_type": "Fixed", "rate": 4.10, "term": "2 Year", "ltv": "75%", "fee": 999},
-        {"bank": "Barclays", "rate_type": "Fixed", "rate": 4.35, "term": "5 Year", "ltv": "60%", "fee": 0},
-        {"bank": "Nationwide", "rate_type": "Tracker", "rate": 4.55, "term": "2 Year", "ltv": "90%", "fee": 495},
-        {"bank": "NatWest", "rate_type": "Variable", "rate": 5.10, "term": "Lifetime", "ltv": "75%", "fee": 0},
-        {"bank": "HSBC", "rate_type": "Fixed", "rate": 4.25, "term": "5 Year", "ltv": "90%", "fee": 999},
-    ]
-    return pd.DataFrame(data)
+def get_realistic_mortgage_rates():
+    # Replace YOUR_USERNAME and YOUR_REPO with your actual GitHub repo path
+    csv_url = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/mortgage_rates.csv"
+    return pd.read_csv(csv_url)
