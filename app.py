@@ -1,4 +1,6 @@
 import streamlit as st
+import plotly.express as px
+
 from mortgage_data import get_mock_mortgage_rates
 
 st.title("🏡 Mortgage Interest Rate Comparison Tool")
@@ -22,6 +24,24 @@ sorted_df = filtered_df.sort_values(by="rate")
 
 st.subheader("💡 Matching Mortgage Products")
 st.dataframe(sorted_df)
+if not sorted_df.empty:
+    st.subheader("📊 Interest Rate Comparison Chart")
+
+    fig = px.bar(
+        sorted_df,
+        x="bank",
+        y="rate",
+        color="rate",
+        text="rate",
+        title="Interest Rates by Bank",
+        labels={"rate": "Interest Rate (%)"},
+        height=400
+    )
+
+    fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+    fig.update_layout(yaxis=dict(range=[0, sorted_df['rate'].max() + 1]))
+
+    st.plotly_chart(fig, use_container_width=True)
 
 loan_amount = st.number_input("Enter Mortgage Amount (£)", value=200000)
 
