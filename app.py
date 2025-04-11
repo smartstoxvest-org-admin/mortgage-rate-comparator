@@ -1,6 +1,4 @@
-# Recreate the final cleaned-up version of app.py with all enhancements and no file writing logic
 
-clean_app_py = """
 import streamlit as st
 import pandas as pd
 import plotly.express as px
