@@ -67,7 +67,7 @@ else:
 """
 
 # Save updated app.py
-with open("/mnt/data/app.py", "w") as f:
+# with open("/mnt/data/app.py", "w") as f:
     f.write(app_py_updated)
 
 "/mnt/data/app.py updated and ready for redeployment."
