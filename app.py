@@ -34,6 +34,7 @@ def calculate_monthly_payment(rate, years, amount):
 
 if not sorted_df.empty:
     selected = sorted_df.iloc[0]
-    years = int(selected['term'].split()[0])
+    # UK mortgage amortization default is 25 years
+    amortization_years = 25
     monthly_payment = calculate_monthly_payment(selected['rate'], years, loan_amount)
     st.metric("💸 Estimated Monthly Payment", f"£{monthly_payment:.2f}")
