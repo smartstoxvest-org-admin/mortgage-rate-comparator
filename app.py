@@ -1,14 +1,13 @@
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from mortgage_data import get_mock_mortgage_rates
+from mortgage_data import get_realistic_mortgage_rates as get_mortgage_data
 
 st.set_page_config(page_title="Mortgage Tool", page_icon="🏡")
 st.title("🏡 Mortgage Interest Rate Comparison Tool")
 st.markdown("Find the best mortgage deals based on rate type, term, and LTV.")
 
-df = get_mock_mortgage_rates()
+df = get_mortgage_data()
 
 # Filters
 rate_type = st.selectbox("Choose Rate Type", df['rate_type'].unique())
